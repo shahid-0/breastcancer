@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+</head>
+<body>
+ <div class = "login">
+    <h1>Brest Cancer Analysis</h1>
+
+    <!-- Main input to for receiving query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="smoothness_mean" placeholder="Smoothness mean" required="required" />        
+        <input type="text" name="symmetry_mean" placeholder="Symmetry mean" required="required" />        
+        <input type="text" name="fractal_dimension_mean" placeholder="Fractal dimension mean" required="required" />        
+        <input type="text" name="texture_se" placeholder="Texture se" required="required" />        
+        <input type="text" name="smoothness_se" placeholder="Smoothness se" required="required" />        
+        <input type="text" name="compactness_se" placeholder="Compactnessse" required="required" />        
+        <input type="text" name="concavity_se" placeholder="Concavity se" required="required" />
+        <input type="text" name="concave points_se" placeholder="Concave points se" required="required" />
+        <input type="text" name="symmetry_se" placeholder="Symmetry se" required="required" />
+        <input type="text" name="fractal_dimension_se" placeholder="Fractal dimension se" required="required" />
+        <input type="text" name="symmetry_worst" placeholder="Symmetry worst" required="required" />
+        <input type="text" name="fractal_dimension_worst" placeholder="Fractal dimension worst" required="required" />
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+        
+        <br>
+        <br>
+        {{prediction_text}}
+ <div>
+    </form>
+</body>
+</html>
